@@ -22,7 +22,7 @@ docker run -e MONGO_URI="mongo://localhost:27017/some-db" \
 
 ## Publishing
 
-To publish the image to ECR, use the following commands
+To build and publish the image to ECR, use the following commands
 
 ```bash
 ECR_REPO="repo-name" ECR_REGION="region" ./ecr-publish.sh
@@ -34,7 +34,7 @@ You can optionally pass the tag as the first argument to the script, otherwise i
 ECR_REPO="repo-name" ECR_REGION="region" ./ecr-publish.sh 1.0.0
 ```
 
-`.ecr-publish.sh` uses the `aws` cli to publish the image to ECR. Make sure you have the `aws` cli installed and
+`.ecr-publish.sh` builds the image and uses the `aws` cli to publish the image to ECR. Make sure you have the `aws` cli installed and
 configured with the correct credentials. You can also use the `AWS_PROFILE` environment variable to specify the profile
 to use.
 
